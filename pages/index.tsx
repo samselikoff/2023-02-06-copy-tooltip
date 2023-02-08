@@ -1,27 +1,21 @@
 import * as Popover from "@radix-ui/react-popover";
 import { AnimatePresence, motion } from "framer-motion";
 import { forwardRef, ReactNode, useEffect, useRef, useState } from "react";
+import { Button } from "./button";
 // import { Button } from "./button";
 
 export default function Index() {
   let [open, setOpen] = useState(false);
-  // let ref = useRef();
-  // useEffect(() => {
-  //   console.log(ref);
-  // });
-  // console.log(ref);
-
-  // return <Button>hi</Button>;
 
   return (
     <div className="m-8 border p-8">
-      {/* <button className="bg-gray-300 px-3 py-1">Click me</button> */}
       <Popover.Root open={open} onOpenChange={setOpen}>
         <Popover.Trigger
           asChild
           className="hover:text-gray-400 focus:outline-none"
         >
           {/* <ClipboardIcon className="W-4 h-4" /> */}
+          {/* <LocalButton>Click me</LocalButton> */}
           <Button>Click me</Button>
           {/* <button>hi</button> */}
         </Popover.Trigger>
@@ -32,9 +26,9 @@ export default function Index() {
               <Popover.Content
                 className=""
                 sideOffset={5}
-                side="right"
+                side="top"
                 asChild
-                align="center"
+                // align="center"
               >
                 <motion.div
                   initial="hidden"
@@ -66,20 +60,3 @@ export default function Index() {
     </div>
   );
 }
-
-const Button = forwardRef(function Button(
-  { children }: { children: ReactNode },
-  ref
-) {
-  // console.log(ref);
-
-  useEffect(() => {
-    console.log(ref);
-  });
-
-  return (
-    <button className="foo" ref={ref}>
-      {children}
-    </button>
-  );
-});
