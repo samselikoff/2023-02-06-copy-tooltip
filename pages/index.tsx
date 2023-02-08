@@ -22,22 +22,6 @@ export default function Index() {
     restart(setTimeout(() => setOpen(false), 2000));
   }
 
-  // let ref = useRef<ReturnType<typeof setTimeout>>();
-
-  // function handleOpenChange() {
-  //   setOpen(true);
-
-  //   clearTimeout(ref.current);
-
-  //   let timer = setTimeout(() => {
-  //     console.log("once");
-
-  //     setOpen(false);
-  //   }, 1000);
-
-  //   ref.current = timer;
-  // }
-
   return (
     <div className="m-20">
       <div className="relative">
