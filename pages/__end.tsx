@@ -14,11 +14,12 @@ function useRestartSetTimeout() {
 
 export default function Index() {
   let [open, setOpen] = useState(false);
+  let restart = useRestartSetTimeout();
 
   function handleOpenChange() {
     setOpen(true);
 
-    setTimeout(() => setOpen(false), 2000);
+    restart(setTimeout(() => setOpen(false), 2000));
   }
 
   return (
